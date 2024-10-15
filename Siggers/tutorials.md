@@ -42,13 +42,14 @@ Copy the following text into the file.
 
 ```
 envs_dirs:
-    - /projectnb/your_project/your_loginname/.conda/envs
+    - /projectnb/YOUR_PROJECT/YOUR_LOGINNAME/.conda/envs
     - ~/.conda/envs
 pkgs_dirs:
-    - /projectnb/your_project/your_loginname/.conda/pkgs
+    - /projectnb/YOUR_PROJECT/YOUR_LOGINNAME/.conda/pkgs
     - ~/.conda/pkgs
 env_prompt: ({name})
 ```
+Don't change ({name}), that is supposed to be there.
 
 ### 2. Create your Conda environment
 
