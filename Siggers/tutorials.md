@@ -69,7 +69,7 @@ To install a specific version, use `python=#`. For example, to install python 3.
 To install multiple packages, separate the names using a space. You will need to do this if you plan on using Jupyter Notebook, Jupyter lab, or Spyder.
 
 ```
-mamba create -y -n custom_condaenv python3 notebook jupyterlab spyder
+mamba create -y -n custom_condaenv python notebook jupyterlab spyder
 ```
 ### 3. Activate your Conda environment
 
