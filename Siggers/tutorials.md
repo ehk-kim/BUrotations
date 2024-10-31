@@ -120,8 +120,25 @@ Once you're finished with your Conda environment, you can exit out of it by usin
 ```
 conda deactivate 
 ```
+### Other useful commands
 
-For more Mamba commands, check out the [Mamba documentation.](https://mamba.readthedocs.io/en/latest/index.html)'
+1. Show all of your available conda enviroments
+```
+conda env list
+```
+2. Remove an environment
+```
+conda remove -n custom_condaEnv --all
+```
+3. View all packages in a conda environment
+```python
+# If you are not in a conda environment
+conda list -n custom_condaEnv
+
+# If you are in a conda environment
+conda list
+```
+For more Mamba commands, check out the [Mamba documentation.](https://mamba.readthedocs.io/en/latest/index.html)
 
 ## Conda environments & interactive sessions
 
