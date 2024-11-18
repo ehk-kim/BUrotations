@@ -1,12 +1,16 @@
-# Code tutorials
-The following tutorials will teach you how to navigate machine learning and general Python in the SCC.
+# Machine Learning in the SCC
+The following tutorials will teach you how to navigate machine learning and python in the SCC.
 
 Feel free to email me if you have any questions!
 
-Written by Emily Kim (ekim7@bu.edu)\
-Updated 10/07/2024
+1. [Set up conda](#conda-environments)
+2. [Use conda in the SCC](#conda-environments--interactive-sessions)
+3. [Use Malinois](#malinois)
 
-## Conda environments
+Written by Emily Kim (ekim7@bu.edu)\
+Updated 11/17/2024
+
+# Conda environments
 
 Conda is a package and environment management system. What does that mean?
 
@@ -140,13 +144,15 @@ conda list
 ```
 For more Mamba commands, check out the [Mamba documentation.](https://mamba.readthedocs.io/en/latest/index.html)
 
-## Conda environments & interactive sessions
+[Back to top](#machine-learning-in-the-scc)
+
+# Conda environments & interactive sessions
 
 Using your Conda environment in an interactive session is different from using it on the command line. In this tutorial, we'll use Jupyter Notebook as an example.
 
 ### 1. Module and pre-launch
 
-In `List of module to load`, type `miniconda`.
+In `List of module to load`, type `miniconda`.\
 In `Pre-Launch Command`, type `conda activate custom_condaenv`
 
 ### 2. Resources
@@ -157,5 +163,58 @@ If you intend on using machine learning/AI via an interactive session, make sure
 
 Congrats! You've successfully created a new Conda environment and loaded it onto Jupyter Notebook. Get out there and code as a reward!
 
+[Back to top](#machine-learning-in-the-scc)
 
+# Malinois
+
+[Malinois](https://www.nature.com/articles/s41586-024-08070-z) is a machine-learning model that can be used to predict cis-regulatory element activity using cell-type from MPRA data. In this tutorial, you will learn how to set up and use Malinois. See the [GitHub page](https://github.com/sjgosai/boda2) for more information.
+
+### 1. Create Malinois conda environment
+
+After you [configure your .condarc file](#1-configure-your-condarc-file), `cd` into the directory where you want to run Malinois. Then, create and activate a Malinois conda environment using command prompt.
+
+```python
+cd /projectnb/your_directory
+
+module load miniconda
+
+mamba create -y -n malinois python==3.7 notebook jupyterlab
+
+mamba activate malinois
+```
+
+Install the necessary packages to run Malinois.
+
+```python
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+
+git clone https://github.com/sjgosai/boda2.git
+
+cd boda2/
+
+pip install --upgrade pip==21.3.1
+pip install --no-cache-dir -r requirements.txt
+pip install -e .
+pip install gsutil
+```
+
+### 2. Run a Jupyter Notebook session
+
+Launch a Jupyter Notebook server on a compute node using the following specifications:
+
+| Prompt | Command |
+| --- | --- |
+| List of module to load | miniconda |
+| Pre-Launch Command | conda activate malinois |
+| Interface | lab |
+| Working Directory | /projectnb/your_directory |
+| Number of cores | 4 |
+| Number of gpus | 3 |
+| GPU compute capability | 6.0 (P100 or V100 or A100 or A40 or L40S) |
+
+_Note: As long as the GPU compute capability is greater than 3.7, any `GPU compute capability` option will work._
+
+### 3. Run the tutorial.
+
+[Back to top](#machine-learning-in-the-scc)
 
