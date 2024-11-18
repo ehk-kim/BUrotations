@@ -62,7 +62,7 @@ cd /projectnb/your_project/your_loginname/
 BU recommends that you use the `mamba` command instead of `conda` for superior speed, so that's what this tutorial will use. Mamba creates a completely empty environment, so we have to donwload a version of Python. You can use any version of Python that suits your needs, but this tutorial will use python3.
 
 ```
-mamba create -y -n custom_condaenv python3
+mamba create -y -n custom_condaenv python
 ```
 To install a specific version, use `python=#`. For example, to install python 3.10, use `python=3.10` in place of `python3`.
 
@@ -151,7 +151,7 @@ In `Pre-Launch Command`, type `conda activate custom_condaenv`
 
 ### 2. Resources
 
-If you intend on using machine learning/AI via an interactive session, make sure to give your program plenty of resources. I used 4 cores and 3 gpus with 3.5 GPU compute capability, but this may be overkill. Allocate your resources as needed.
+If you intend on using machine learning/AI via an interactive session, make sure to give your program plenty of resources. I used 4 cores and 3 gpus with 6.0 GPU compute capability. Allocate your resources as needed.
 
 ### 3. Code
 
