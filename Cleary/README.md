@@ -213,7 +213,10 @@ case 'TranscriptomeRegexEdit'
 
 # Codebook creation
 
+To design larger experiments, use `MERFISH_analysis/example_scripts/code_construction_script.m` to create a codebook. However, for a smaller experiment, use [this codebook][7] or [this one][8] as a template and create your own.
 
+[7]: https://github.com/ehk-kim/BUrotations/blob/main/Cleary/example_files/codebook_cm1_all49.csv
+[8]: https://github.com/ehk-kim/BUrotations/blob/main/Cleary/example_files/codebook_2.csv
 
 # Design probes
 
